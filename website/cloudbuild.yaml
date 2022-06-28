@@ -1,0 +1,12 @@
+steps:
+- name: node:latest
+  dir: website
+  entrypoint: npm
+  args: ["install"]
+- name: node:latest
+  dir: website
+  entrypoint: npm
+  args: ["run", "build"]
+- name: "gcr.io/cloud-builders/gsutil"
+  dir: website
+  args: ["-m", "cp", "-r", "build/*", "gs://tpcloud.com.ar"]

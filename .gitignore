@@ -1,0 +1,6 @@
+.terraform/
+.terraform.*
+terraform.tfstate*
+.terraform*
+*.out
+.DS_Store
